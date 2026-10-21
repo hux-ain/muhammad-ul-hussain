@@ -1,46 +1,78 @@
-# Hux-Ain — Cinematic Trailer Portfolio
+<div align="center">
 
-Next.js 14 · React Three Fiber · Framer Motion · GSAP · Tailwind
+# MUHAMMAD-UL HUSSAIN
+### A Cinematic Portfolio
 
-## Run
+*A developer portfolio told like a film: scroll-driven scenes, film-reel projects and a book that opens itself.*
+
+<br>
+
+![Next.js](https://img.shields.io/badge/Next.js_14-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![GSAP](https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=black)
+![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=threedotjs&logoColor=white)
+
+[**GitHub**](https://github.com/hux-ain/) · [**LinkedIn**](https://www.linkedin.com/in/muhammad-ul-hussain-6323a8209/)
+
+</div>
+
+---
+
+## The Scenes
+
+| # | Scene | What happens |
+|:-:|:--|:--|
+| 01 | **Opening Title** | Glitch-in title card with an ambient score |
+| 02 | **About** | A photo-covered book centres on screen, opens across three spreads, then closes |
+| 03 | **Skills** | Glowing tiles over a live 3D core |
+| 04 | **Experience Reel** | Film frames playing real project footage, expandable with sound |
+| 05 | **Original Productions** | Projects presented as movie posters, with hover previews |
+| 06 | **Certificates** | A horizontal scroll reel, full-screen on click |
+| 07 | **Contact** | The closing credits |
+
+## Tech
+
+**Next.js 14** (App Router) · **TypeScript** · **Tailwind CSS** · **GSAP** for scroll choreography · **Three.js** for the 3D backdrop · Web Audio for the fallback soundtrack
+
+## Getting Started
 
 ```bash
+git clone https://github.com/hux-ain/muhammad-ul-hussain.git
+cd muhammad-ul-hussain
 npm install
-npm run dev        # http://localhost:3000
-npm run build && npm start
+npm run dev
 ```
 
-## Where your content lives — `data/portfolio.ts`
+Open [localhost:3000](http://localhost:3000). For a production build, run `npm run build && npm start`.
 
-| What | Field | File |
-| --- | --- | --- |
-| Top-bar name (next to ▶) | `profile.brand` | — |
-| Scene 1 cut-out photo | `profile.heroImage` | `public/images/hero-cutout.webp` |
-| Book cover photo | `profile.aboutImage` | `public/images/about-portrait.jpg` |
-| "Watch Trailer" video | `profile.trailerVideo` | `public/videos/developer.mp4` (same clip as the Developer reel) |
-| Book text (bio / education / quote) | `profile.bio`, `profile.education`, `profile.quote` | — |
-| The Reel (3 videos) | `experience[].video` | `public/videos/hrms.mp4`, `developer.mp4`, `iqra.mp4` |
-| Original Productions posters (3) | `projects[].poster` | `public/posters/*.jpg` (1200×1800) |
-| Poster hover preview | `projects[].video` | HRMS plays `hrms.mp4`; add one for the others if you like |
-| Certificates | `certificates[]` | `public/certs/*` |
-| Background music | — | `public/audio/cinematic.mp3` (falls back to a synthesized drone) |
-| GitHub / LinkedIn | `profile.links` | already set (hux-ain / muhammad-ul-hussain) |
+## Structure
 
-Videos: H.264 `.mp4`, ideally under ~15 MB each so they load fast on mobile.
+```
+app/            layout, global styles, dimming variables
+components/
+  scenes/       one file per scene
+  book/         the About book
+  three/        3D backdrop and skill core
+data/           portfolio.ts — all content lives here
+hooks/          audio, horizontal pinning, in-view detection
+public/         videos, posters, audio
+```
 
-## Brightness
+## Make It Yours
 
-Photos, posters, clips and certificates are dimmed with CSS variables at the top of `app/globals.css`
-(`--dim-img`, `--dim-poster`, `--dim-cert`, `--dim-cert-hover`, `--dim-video`). Lower = darker.
+- **Content**: every name, link, project and certificate is in `data/portfolio.ts`.
+- **Brightness**: tune the `--dim-*` variables at the top of `app/globals.css`.
+- **Music**: drop a track at `public/audio/cinematic.mp3`. Without one, a generated drone plays.
 
-## Scenes
+## Deploy
 
-1. Opening Title — `scenes/OpeningTitle.tsx`
-2. About Me — scroll-driven 3D book: `scenes/About.tsx` + `book/Book.tsx` (cover → 3 spreads → closes). On phones the book shows one page at a time.
-3. Skills Universe — `scenes/Skills.tsx` (hex tiles) + `three/SkillCore.tsx` (background core)
-4. The Reel — pinned horizontal film strip with video frames: `scenes/ExperienceReel.tsx`
-5. Original Productions — `scenes/Projects.tsx`
-6. Certificates — horizontal film strip + full-screen viewer: `scenes/Certificates.tsx`
-7. Contact — `scenes/Contact.tsx`
+Built for [Vercel](https://vercel.com): import the repo, keep the defaults, deploy. No environment variables needed.
 
-Browsers block autoplay with sound, so music starts from the intro gate or the Score toggle.
+---
+
+<div align="center">
+
+Written, directed and developed by **Muhammad-ul Hussain**
+
+</div>
